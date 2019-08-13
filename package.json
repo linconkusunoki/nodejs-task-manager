@@ -1,18 +1,18 @@
 {
   "name": "task-manager",
+  "license": "MIT",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "env-cmd -f ./src/config/dev.env nodemon src/index.js"
+    "dev": "env-cmd -f ./src/config/dev.env nodemon src/index.js",
+    "test": "env-cmd -f ./src/config/test.env jest --watch --runInBand"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^6.4.0",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.1.10",
@@ -22,7 +22,13 @@
     "validator": "^10.9.0"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.17",
     "env-cmd": "^9.0.3",
-    "nodemon": "^1.18.9"
+    "jest": "^24.8.0",
+    "nodemon": "^1.18.9",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
