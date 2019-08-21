@@ -6,24 +6,35 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "env-cmd -f ./src/config/dev.env nodemon src/index.js",
+    "client": "cd client && npm start",
+    "server": "env-cmd -f ./src/config/dev.env nodemon src/index.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "test": "env-cmd -f ./src/config/test.env jest --watch --runInBand",
     "test:ci": "jest --runInBand --detectOpenHandles"
   },
   "dependencies": {
+    "@rocketseat/unform": "^1.5.1",
     "@sendgrid/mail": "^6.4.0",
+    "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "humps": "^2.0.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.1.10",
     "mongoose": "^5.3.16",
     "multer": "^1.4.1",
+    "named-urls": "^1.4.0",
+    "react-router-dom": "^5.0.1",
     "sharp": "^0.22.1",
-    "validator": "^10.9.0"
+    "styled-components": "^4.3.2",
+    "styled-tools": "^1.7.1",
+    "validator": "^10.9.0",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.17",
+    "concurrently": "^4.1.2",
     "env-cmd": "^9.0.3",
     "jest": "^24.8.0",
     "nodemon": "^1.18.9",
