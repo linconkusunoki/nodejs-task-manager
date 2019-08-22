@@ -1,5 +1,17 @@
 import styled from 'styled-components'
 import desk from 'assets/images/desk.jpg'
+import { Link } from 'react-router-dom'
+import { FiChevronLeft } from 'react-icons/fi'
+
+export const BackLink = styled(Link)`
+  position: absolute;
+  left: 2.5rem;
+  top: 2.95rem;
+`
+
+export const BackIcon = styled(FiChevronLeft)`
+  color: #8244bc;
+`
 
 export const Wrapper = styled.div`
   background-color: #fafbfc;
@@ -21,6 +33,7 @@ export const Quote = styled.div`
   display: flex;
   align-items: flex-end;
   width: 380px;
+  min-height: 381px;
   padding: 2rem;
   position: relative;
 
@@ -58,11 +71,4 @@ export const Avatar = styled.div`
   width: 80px;
   height: 80px;
   flex-shrink: 0;
-`
-
-export const Divider = styled.div`
-  text-align: center;
-  color: #718096;
-  font-size: 0.85rem;
-  margin: 0.5rem 0;
 `

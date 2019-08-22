@@ -1,17 +1,17 @@
 import React from 'react'
 import * as S from './styles'
 import schema, { initialState } from './schema'
-import { Box, Button, InputText } from 'components'
+import { Box, Button, InputText, Spinner } from 'components'
 import { routes } from 'Routes'
-import { Link } from 'react-router-dom'
 
-const SignIn = () => {
+const SignUp = () => {
   const [data, setData] = React.useState(initialState)
 
   const handleSubmit = async e => {
     e.preventDefault()
     try {
       await schema.validate({
+        name: data.name.value,
         email: data.email.value,
         password: data.password.value
       })
@@ -51,9 +51,18 @@ const SignIn = () => {
             The strength of JavaScript is that you can do anything.
           </S.Message>
         </S.Quote>
-        <div className="p-4 md:p-10">
-          <S.Title className="mb-4">Sign in</S.Title>
+        <div className="p-4 md:p-10 relative">
+          <S.Title className="mb-4">Sign up</S.Title>
           <form onSubmit={handleSubmit}>
+            <InputText
+              name="name"
+              type="text"
+              placeholder="Name"
+              className="mb-4"
+              errorMessage={data.name.errorMessage}
+              value={data.name.value}
+              onChange={handleChange}
+            />
             <InputText
               name="email"
               type="email"
@@ -73,17 +82,17 @@ const SignIn = () => {
               onChange={handleChange}
             />
             <Button type="submit" color="primary" fullWidth>
-              Sign in
+              {/* <Spinner className="mr-2" /> */}
+              Create account
             </Button>
           </form>
-          <S.Divider>Don't have an account?</S.Divider>
-          <Link to={routes.auth.signup} tabIndex={-1}>
-            <Button fullWidth>Create account</Button>
-          </Link>
+          <S.BackLink to={routes.auth.signin} tabIndex={-1}>
+            <S.BackIcon size="30" />
+          </S.BackLink>
         </div>
       </Box>
     </S.Wrapper>
   )
 }
 
-export default SignIn
+export default SignUp

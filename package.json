@@ -10,7 +10,8 @@
     "server": "env-cmd -f ./src/config/dev.env nodemon src/index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "test": "env-cmd -f ./src/config/test.env jest --watch --runInBand",
-    "test:ci": "jest --runInBand --detectOpenHandles"
+    "test:ci": "jest --runInBand --detectOpenHandles",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "@rocketseat/unform": "^1.5.1",

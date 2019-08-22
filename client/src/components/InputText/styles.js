@@ -27,6 +27,6 @@ export const InputText = styled.input`
 
 export const ErrorMessage = styled.div`
   color: #f56565;
-  padding: 0.3rem 1.5rem 0;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  padding-left: 1.5rem;
 `
