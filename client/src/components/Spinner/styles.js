@@ -12,8 +12,8 @@ const spin = keyframes`
 export const Wrapper = styled.div`
   animation: 1s ${spin} ease infinite;
   display: inline-block;
-  height: 16px;
-  width: 16px;
+  height: 24px;
+  width: 24px;
   border: 2px solid #fff;
   border-radius: 16px;
   border-right-color: transparent;

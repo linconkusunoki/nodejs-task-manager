@@ -32,6 +32,7 @@ export const Quote = styled.div`
     width: 100%;
     height: 100%;
     background: url(${desk}) no-repeat;
+    background-size: cover;
     opacity: 0.15;
   }
 
@@ -65,4 +66,8 @@ export const Divider = styled.div`
   color: #718096;
   font-size: 0.85rem;
   margin: 0.5rem 0;
+`
+
+export const Error = styled.p`
+  color: #f56565;
 `

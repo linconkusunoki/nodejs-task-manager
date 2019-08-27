@@ -1,10 +1,16 @@
 import axios from 'axios'
 import humps from 'humps'
 
-const baseURL = process.env.NODE_ENV
-console.log(baseURL)
+const getBaseURL = () => {
+  const env = {
+    production: 'https://lk-task-manager.herokuapp.com',
+    development: 'http://localhost:5000/api'
+  }
 
-const api = axios.create({ baseURL: 'https://reqres.in/api' })
+  return env[process.env.NODE_ENV]
+}
+
+const api = axios.create({ baseURL: getBaseURL() })
 
 api.interceptors.request.use(async config => {
   const token = localStorage.getItem('@company-token')
@@ -29,7 +35,7 @@ api.interceptors.response.use(
       // logout logic
       return
     }
-    return Promise.reject(error.response)
+    return Promise.reject(error.response.data)
   }
 )
 
