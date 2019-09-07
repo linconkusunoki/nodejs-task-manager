@@ -37,7 +37,6 @@
     "@types/jest": "^24.0.18",
     "concurrently": "^4.1.2",
     "env-cmd": "^10.0.1",
-    "jest": "^24.9.0",
     "nodemon": "^1.19.2",
     "supertest": "^4.0.2"
   },
