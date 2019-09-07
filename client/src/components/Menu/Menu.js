@@ -7,7 +7,7 @@ import Button from '../Button'
 import InputText from '../InputText'
 
 export default function Menu() {
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = React.useState(false)
   const [touched, setTouched] = React.useState(false)
   const [ripple, setRipple] = React.useState(false)
 
@@ -18,7 +18,7 @@ export default function Menu() {
       setOpen(!open)
       setTouched(true)
       setRipple(false)
-    }, 500)
+    }, 300)
   }
 
   return (

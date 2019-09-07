@@ -57,6 +57,7 @@ export const Container = styled.div`
   background: #fff;
   bottom: 0;
   border-radius: 50px 50px 0 0;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   height: 260px;
   left: 0;
   position: fixed;
@@ -124,7 +125,7 @@ export const Ripple = styled.span`
   ${props =>
     props.ripple &&
     css`
-      animation: ${ripple} 0.5s;
+      animation: ${ripple} 0.3s;
     `}
 `
 
