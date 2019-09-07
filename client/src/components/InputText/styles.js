@@ -10,6 +10,7 @@ export const InputText = styled.input`
   border-radius: 100px;
   padding: 0.5rem 1.5rem;
   outline: none;
+  width: ${ifProp({ fullWidth: true }, '100%', '')};
 
   ${ifProp(
     'errorMessage',

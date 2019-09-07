@@ -20,7 +20,7 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <PrivateRoute exact path={routes.root} component={Dashboard} />
+        <Route exact path={routes.root} component={Dashboard} />
         <Route exact path={routes.auth.signin} component={SignIn} />
         <Route exact path={routes.auth.signup} component={SignUp} />
         <Route exact path="/not-found" component={() => <h1>404</h1>} />
