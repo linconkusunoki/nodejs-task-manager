@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import desk from 'assets/images/desk.jpg'
 import { Link } from 'react-router-dom'
 import { FiChevronLeft } from 'react-icons/fi'
+import desk from '../../assets/images/desk.jpg'
 
 export const BackLink = styled(Link)`
   position: absolute;

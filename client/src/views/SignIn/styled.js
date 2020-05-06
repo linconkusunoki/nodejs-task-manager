@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import desk from 'assets/images/desk.jpg'
+import desk from '../../assets/images/desk.jpg'
 
 export const Wrapper = styled.div`
   background-color: #fafbfc;
@@ -32,6 +32,7 @@ export const Quote = styled.div`
     width: 100%;
     height: 100%;
     background: url(${desk}) no-repeat;
+    background-size: cover;
     opacity: 0.15;
   }
 
